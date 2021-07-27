@@ -28,6 +28,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       appBar: AppBar(
         title: Text('Register'),
         centerTitle: true,
@@ -56,12 +57,16 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
                         TextFormField(
                           autofocus: false,
                           validator: (value) =>
                               value!.isEmpty ? 'Please enter email' : null,
                           controller: _email,
                           decoration: InputDecoration(
+                            hintText: 'Email',
                             focusColor: Colors.green,
                             prefixIcon: Icon(Icons.email),
                             border: OutlineInputBorder(
@@ -78,6 +83,7 @@ class _RegisterState extends State<Register> {
                               : null,
                           controller: _password,
                           decoration: InputDecoration(
+                            hintText: 'Password',
                             prefixIcon: Icon(Icons.password),
                             suffixIcon: InkWell(
                               onTap: _showPass,
@@ -93,6 +99,9 @@ class _RegisterState extends State<Register> {
                           ),
                           obscureText: _isHiden,
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
                         TextFormField(
                           validator: (value) =>
                               _password.text != _cpassword.text
@@ -100,6 +109,7 @@ class _RegisterState extends State<Register> {
                                   : null,
                           controller: _cpassword,
                           decoration: InputDecoration(
+                            hintText: 'Comfirm Password',
                             prefixIcon: Icon(Icons.password),
                             suffixIcon: InkWell(
                               onTap: _showPass,
