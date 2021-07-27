@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1012233774507",
+    "project_id": "cam-data-9e956",
+    "storage_bucket": "cam-data-9e956.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012233774507:android:38a367362d32a4ea325eee",
+        "android_client_info": {
+          "package_name": "com.example.cam_data"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012233774507-nf6q1q7ujrcemv7q2vaaf4oet4singad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaEa2oF7UB-jHdObHIATLY148D2WugbNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012233774507-nf6q1q7ujrcemv7q2vaaf4oet4singad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
