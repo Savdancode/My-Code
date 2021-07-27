@@ -143,10 +143,10 @@ class _RegisterState extends State<Register> {
                                       password: _password.text.trim())
                                   .then((value) {
                                 if (value == "Account created") {
-                                  userSetup(_username.text, _image);
                                   setState(() {
-                                    isLoading = false;
+                                    isLoading = true;
                                   });
+                                  userSetup(_username.text, _image);
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
@@ -196,8 +196,22 @@ class _RegisterState extends State<Register> {
               ),
             )
           : Center(
-              child: CircularProgressIndicator(),
-            ),
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'Loading...',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              ],
+            )),
     );
   }
 
