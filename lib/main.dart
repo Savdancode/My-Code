@@ -1,4 +1,4 @@
-import 'package:cam_data/Authen/register.dart';
+import 'package:cam_data/Screens/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Authenticaion App',
       home: TestScreen(),
       debugShowCheckedModeBanner: false,
     );
@@ -34,7 +34,7 @@ class _TestScreenState extends State<TestScreen> {
         if (snapshot.hasError) {
           return CircularProgressIndicator();
         } else {
-          return Register();
+          return Splash();
         }
       },
     );
