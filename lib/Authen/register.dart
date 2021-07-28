@@ -48,6 +48,7 @@ class _RegisterState extends State<Register> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         _buildPickerImage,
+                        SizedBox(height: 10),
                         TextFormField(
                           autofocus: false,
                           validator: (value) =>

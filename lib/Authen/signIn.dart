@@ -1,4 +1,5 @@
 import 'package:cam_data/Authen/authen_Class.dart';
+import 'package:cam_data/Authen/register.dart';
 import 'package:cam_data/Screens/homesreen.dart';
 import 'package:flutter/material.dart';
 
@@ -113,6 +114,25 @@ class _SignInState extends State<SignIn> {
                         minWidth: MediaQuery.of(context).size.width / 2,
                         color: Colors.green,
                         child: Text('Sign In'),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Don\'t hav an account ?'),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Register()),
+                                  (route) => false);
+                            },
+                            child: Text('Register now'),
+                          )
+                        ],
                       ),
                     ],
                   ),
