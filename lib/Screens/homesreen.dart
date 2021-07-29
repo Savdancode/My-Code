@@ -10,10 +10,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String uid = FirebaseAuth.instance.currentUser!.uid;
+  final firebaseUser = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Appbar"),
+      ),
       body: FutureBuilder<QuerySnapshot>(
         future: FirebaseFirestore.instance.collection('Users').get(),
         builder: (context, snapshot) {
@@ -23,17 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
               children: documents
                   .map(
                     (doc) => Card(
-                      child: ListTile(
-                        title: Text(doc['displayName']),
-                      ),
-                    ),
+                        child: ListTile(
+                      title: Text(doc['displayName'].toString()),
+                    )),
                   )
                   .toList(),
             );
-          } else if (snapshot.hasError) {
-            return Center(
-              child: Text('error'),
-            );
+          } else if (snapshot.hasData) {
+            return Text('error');
           } else {
             return Center(
               child: Text('Loading...'),
