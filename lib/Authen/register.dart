@@ -146,7 +146,7 @@ class _RegisterState extends State<Register> {
                                   setState(() {
                                     isLoading = true;
                                   });
-                                  userSetup(_username.text, _image);
+                                  userSetup(_username.text, _image,_email.text);
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
